@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     }
 
     const data = result.data;
-    const supabase = createClient();
+    const supabase = await createClient();
 
     const { error } = await supabase.from('appointments').insert({
       patient_name: data.patient_name,
